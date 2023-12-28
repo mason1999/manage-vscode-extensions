@@ -24,6 +24,7 @@ cat base_keybindings.txt >> ${TEMP_KEYBINDINGS_FILE}
 ######################################## DRIVING CODE ########################################
 for directory in $(ls --classify | grep '.*/$' | sed 's/\/$//'); do
     code --install-extension ${directory} > /dev/null 2>&1
+    # TODO: do this and also rename the repository
     if [[ -e "${directory}/settings.txt" ]]; then
         echo "${directory}/settings.txt exists"
     fi
