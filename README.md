@@ -38,7 +38,6 @@ This installation is meant for ubuntu linux where `Bash` was the main shell bein
 Ensure that you have the following installed:
 
 - `code` command for vscode. To install this go to the command pallete (`ctrl+shift+p`) and type in `Shell Command: Install 'code' command in PATH`.
-- `jq` command. To install this command run `sudo apt-get install jq`.
 - `Hack Nerd Font`. To install this go to the [nerd font repo](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack/Regular) and download the `HackNerdFontMono-Regular.ttf` file. Put this font file in the `~/.local/share/fonts/` folder.
 
 # Summary of usage
