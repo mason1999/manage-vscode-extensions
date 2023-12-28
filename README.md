@@ -49,9 +49,9 @@ Ensure that you have the following installed:
   1. [Optional Step] Create `settings.txt` and `keybindings.txt` file in the folder where:
      - The `settings.txt` file is almost a json object-- we exclude the `{}`.
      - The `keybindings.txt` file is almost an array of json objects-- we exclude the `[]`.
-     - We do this because we use the `cat` command to append files together (`jq` doesn't handle comments)
+     - We do this because we use the `cat` command to append files together (`jq` doesn't handle comments).
      - If you choose not to create `settings.txt` or `keybindings.txt` this will just not install `settings` or `keybindings` for that extension. That is, if you just have an empty directory with the name being the extension ID, the effect is to just install the extension. We add an empty file (`buffer.txt`) to empty directories so that git will recognise the directories. Once the directory is cloned, `buffer.txt` can be deleted.
-  1. Run the script `./manage-vscode.sh`
+  1. Run the script `./manage-vscode.sh`.
   1. The following is a quick diagram of how it may look to add some extensions on. Note that in each directory you either have `settings.txt`, `keybindings.txt` or `buffer.txt` (for empty directories. This could be deleted but then you cannot upload this to `github`):
      ```
      .
