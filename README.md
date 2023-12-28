@@ -2,7 +2,7 @@
 
 In vscode there are three main things I tend to be concerned with to set up my environment. These things are:
 
-1. The `settings.json` file: This is a file containing a `json` object which stores your settings. For example, if you put the following into `settings.json` it will prevent the minimap for being displayed:
+1. The `settings.json` file: This is a file containing a `json` object which stores your settings. For example, if you put the following into `settings.json` it will prevent the minimap from being displayed:
 
    ```
    {
