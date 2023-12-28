@@ -51,7 +51,9 @@ Ensure that you have the following installed:
      - The `keybindings.txt` file is almost an array of json objects-- we exclude the `[]`.
      - We do this because we use the `cat` command to append files together (`jq` doesn't handle comments).
      - If you choose not to create `settings.txt` or `keybindings.txt` this will just not install `settings` or `keybindings` for that extension. That is, if you just have an empty directory with the name being the extension ID, the effect is to just install the extension. We add an empty file (`buffer.txt`) to empty directories so that git will recognise the directories. Once the directory is cloned, `buffer.txt` can be deleted.
-  1. The following is a quick diagram of how it may look to add some extensions on. Note that in each directory you either have `settings.txt`, `keybindings.txt` or `buffer.txt` (for empty directories. This could be deleted but then you cannot upload this to `github`):
+  1. The following is a quick diagram of how it may look to add some extensions on. We see:
+     - That in each directory you either have `settings.txt`, `keybindings.txt` or `buffer.txt` (for empty directories. This could be deleted but then you cannot upload this to `github`):
+     - The files `base_settings.txt` and `base_keybindings.txt` are text files which are initally added without the help of extensions. Think of these as your "base" vscode layer.
      ```
      .
      ├── aaron-bond.better-comments
