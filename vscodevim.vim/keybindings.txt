@@ -1,0 +1,6 @@
+    /**************************************** VIM KEYBINDINGS ****************************************/
+    {
+        "key": "ctrl+c",
+        "command": "editor.action.clipboardCopyAction",
+        "when": "vim.mode == 'Insert'"
+    },

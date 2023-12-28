@@ -1,0 +1,4 @@
+    /**************************************** POWERSHELL SETTINGS ****************************************/
+    "powershell.scriptAnalysis.enable": false,
+    "powershell.integratedConsole.showOnStartup": false,
+    "powershell.integratedConsole.focusConsoleOnExecute": false,

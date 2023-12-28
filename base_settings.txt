@@ -22,6 +22,7 @@
     "editor.formatOnSave": true,
     "editor.fontSize": 15,
     "editor.tabCompletion": "on",
+    "editor.quickSuggestionsDelay": 1,
 
     "terminal.integrated.fontSize": 15,
     "terminal.integrated.fontFamily": "Hack Nerd Font Mono",

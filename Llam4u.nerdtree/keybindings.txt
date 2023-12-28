@@ -1,0 +1,13 @@
+    /**************************************** NERDTREE KEYBINDINGS ****************************************/
+    /*
+    ctrl+n: toggle tree
+    h, j, k, l: movement
+    enter: open file in active editor or expand folder
+    t: open file in new tab
+    ma: make a new file
+    mf: make a new folder
+    md: delete a file
+    mc: copy a file
+    mv: paste a file
+    mr: rename a file
+    */

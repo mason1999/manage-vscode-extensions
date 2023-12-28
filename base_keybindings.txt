@@ -144,12 +144,12 @@
     {
         "key": "ctrl+shift+v",
         "command": "workbench.action.terminal.paste",
-        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+        "when": "terminalFocus && terminalHasBeenCreated && terminalShellType == 'bash' || terminalFocus && terminalProcessSupported && terminalShellType == 'bash'"
     },
     {
         "key": "ctrl+shift+c",
         "command": "workbench.action.terminal.copyAndClearSelection",
-        "when": "terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected"
+        "when": "terminalFocus && terminalHasBeenCreated && terminalTextSelected && terminalShellType == 'bash' || terminalFocus && terminalProcessSupported && terminalTextSelected && terminalShellType == 'bash'"
     },
     // -------------------- Retaining terminal focus when shifting --------------------
     {
@@ -184,4 +184,33 @@
                 "workbench.action.navigateBack"
             ]
         }
+    },
+    // -------------------- Run current line and selected lines --------------------
+    {
+        "key": "ctrl+enter",
+        "command": "extension.multiCommand.execute",
+        "args": {
+            "sequence": [
+                "expandLineSelection",
+                "workbench.action.terminal.runSelectedText",
+                "cancelSelection"
+            ]
+        },
+        "when": "editorTextFocus && !editorHasSelection"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "workbench.action.terminal.runSelectedText",
+        "when": "editorTextFocus && editorHasSelection"
+    },
+    // -------------------- Function Definitions and Parameter Hints --------------------
+    {
+        "key": "ctrl+right",
+        "command": "editor.action.goToDeclaration",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+left",
+        "command": "workbench.action.navigateBack",
+        "when": "editorTextFocus"
     },
