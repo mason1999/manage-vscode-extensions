@@ -1,0 +1,18 @@
+{
+    /**************************************** VIM SETTINGS ****************************************/
+    // -------------------- Remove ctrl+n and ctrl+k because they conflict with nerdtree and folding --------------------
+    "vim.handleKeys": {
+        "<C-n>": false,
+        "<C-k>": false
+    },
+    "vim.leader": "\\",
+    "vim.useSystemClipboard": true,
+    // -------------------- Vim delete into black hole register --------------------
+    "vim.normalModeKeyBindingsNonRecursive": [
+        { "before": ["d"], "after": ["\"", "_", "d"] }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        { "before": ["p"], "after": ["P"] }
+    ],
+    
+}

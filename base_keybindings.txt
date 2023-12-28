@@ -1,0 +1,187 @@
+    /**************************************** BASE KEYBINDINGS ****************************************/
+
+    // -------------------- Close current Editor Window --------------------
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    // -------------------- Disable for Tmux in vscode --------------------
+    {
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    // -------------------- VScode Intellisense  --------------------
+    {
+        "key": "ctrl+j",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    // -------------------- VScode Command Pallete  --------------------
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.quickOpenNavigateNext",
+        "when": "!editorTextFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.quickOpenNavigatePrevious",
+        "when": "!editorTextFocus"
+    },
+    // -------------------- Toggle terminal --------------------
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    // -------------------- Navigate Tabs in editors and previews/extensions  --------------------
+    {
+        "key": "ctrl+]",
+        "command": "workbench.action.nextEditorInGroup",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+[",
+        "command": "workbench.action.previousEditorInGroup",
+        "when": "!terminalFocus"
+    },
+    // -------------------- Navigate between splits in editor (and to terminal) in vscode vim-like  --------------------
+    {
+        "key": "ctrl+shift+h",
+        "command": "workbench.action.navigateLeft",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+j",
+        "command": "workbench.action.navigateDown",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "workbench.action.navigateUp",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "workbench.action.navigateRight",
+        "when": "editorTextFocus"
+    },
+    // -------------------- Create a split terminal  --------------------
+    {
+        "key": "ctrl+shift+n",
+        "command": "workbench.action.terminal.split",
+        "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+    },
+    // -------------------- Navigate panes in the terminal and to an editor (terminal at bottom)  --------------------
+    {
+        "key": "ctrl+shift+h",
+        "command": "workbench.action.terminal.focusPreviousPane",
+        "when": "panelPosition == 'bottom' && (terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile)"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "panelPosition == 'bottom' && (terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile)"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "workbench.action.navigateUp",
+        "when": "panelPosition == 'bottom' && (terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile)"
+    },
+    // -------------------- Navigate panes in the terminal and to an editor (terminal at right)  --------------------
+    {
+        "key": "ctrl+shift+k",
+        "command": "workbench.action.terminal.focusPreviousPane",
+        "when": "panelPosition == 'right' && (terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile)"
+    },
+    {
+        "key": "ctrl+shift+j",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "panelPosition == 'right' && (terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile)"
+    },
+    {
+        "key": "ctrl+shift+h",
+        "command": "workbench.action.navigateLeft",
+        "when": "panelPosition == 'right' && (terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile)"
+    },
+    // -------------------- Create, Rename and Navigate different terminal sessions  --------------------
+    {
+        "key": "ctrl+shift+,",
+        "command": "workbench.action.terminal.rename",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "ctrl+shift+[",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "ctrl+shift+]",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    // -------------------- Change copy and paste keybinds for terminal --------------------
+    // Remove defaults
+    {
+        "key": "ctrl+v",
+        "command": "-workbench.action.terminal.paste",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "-workbench.action.terminal.copyAndClearSelection",
+        "when": "terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected"
+    },
+    // Replace defaults
+    {
+        "key": "ctrl+shift+v",
+        "command": "workbench.action.terminal.paste",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "workbench.action.terminal.copyAndClearSelection",
+        "when": "terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected"
+    },
+    // -------------------- Retaining terminal focus when shifting --------------------
+    {
+        "key": "ctrl+alt+l",
+        "command": "extension.multiCommand.execute",
+        "args": { 
+            "sequence": [
+                "workbench.action.positionPanelRight",
+                "workbench.action.focusActiveEditorGroup"
+            ]
+        },
+        "when": "panelPosition == 'bottom' && editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+j",
+        "command": "extension.multiCommand.execute",
+        "args": { 
+            "sequence": [
+                "workbench.action.positionPanelBottom",
+                "workbench.action.focusActiveEditorGroup"
+            ]
+        },
+        "when": "panelPosition == 'right' && editorTextFocus"
+    },
+    // -------------------- Retaining focus on markdown file when opening preview --------------------
+    {
+        "key": "ctrl+m v",
+        "command": "extension.multiCommand.execute",
+        "args": { 
+            "sequence": [
+                "markdown.showPreviewToSide",
+                "workbench.action.navigateBack"
+            ]
+        }
+    },

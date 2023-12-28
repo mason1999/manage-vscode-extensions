@@ -1,0 +1,39 @@
+    /**************************************** BASE SETTINGS ****************************************/
+    "redhad.telemetry.enabled": false,
+
+    "workbench.startupEditor": "none",
+    "workbench.colorCustomizations": {
+        "editor.selectionBackground": "#07582E",
+        "editor.selectionHighlightBackground": "#07582E"
+    },
+    "workbench.colorTheme": "Visual Studio 2019 Dark",
+    "workbench.statusBar.visible": true,
+    "workbench.iconTheme": "vscode-icons",
+
+    "window.openFoldersInNewWindow": "off",
+
+    "editor.minimap.autohide": true,
+    "editor.fontFamily": "Hack Nerd Font Mono",
+    "editor.lineNumbers": "on",
+    "editor.minimap.enabled": false,
+    "editor.wordWrap": "off",
+    "editor.cursorBlinking": "solid",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.formatOnSave": true,
+    "editor.fontSize": 15,
+    "editor.tabCompletion": "on",
+
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+    "terminal.integrated.allowChords": false,
+
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+
+    "files.associations": {
+        "azure-pipeline.yml": "azure-pipelines",
+        "azure-pipeline.yaml": "azure-pipelines"
+    },
+
+    "files.insertFinalNewline": true,
