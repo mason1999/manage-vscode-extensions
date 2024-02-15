@@ -46,6 +46,15 @@ for vscode_extension in $(comm -13 <(ls --classify | grep '.*/$' | sed 's/\/$//'
             code --uninstall-extension ${vscode_extension}
         fi
     fi
+    
+    if [[ "${vscode_extension}" == "llam4u.nerdtree" ]]; then
+        if ls --classify | grep '.*/$' | sed 's/\/$//' | grep 'Llam4u.nerdtree' > /dev/null 2>&1; then
+            echo "Special case: Llam4u.nerdtree folder exists so we do not uninstall nerdtree extension."
+            continue
+        else
+            code --uninstall-extension ${vscode_extension}
+        fi
+    fi
 
     code --uninstall-extension ${vscode_extension}
 done
