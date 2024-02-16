@@ -42,8 +42,14 @@ Ensure that you have the following installed:
 
 # Summary of usage
 
+## Applying the changes
+
 - Change directory into the repo containing the script `manage-vscode.sh`. This step is important because we use relative pathing for scripting.
 - To run the script type in the command `./manage-vscode.sh`.
+  - Make sure that you change the variables `VSCODE_SETTINGS_FILE` and `VSCODE_KEYBINDINGS_FILE` to include the paths of of your settings and keybindings!
+
+## Adding a new Extension, Setting and Keybindings combination
+
 - To add your own `extension`, `settings` and `keybindings` combination:
   1. Create a new folder in the same working directory as `manage-vscode.sh`. The name of the folder must be the `Extension ID` of the extension you want to install.
   1. [Optional Step] Create `settings.txt` and `keybindings.txt` file in the folder where:

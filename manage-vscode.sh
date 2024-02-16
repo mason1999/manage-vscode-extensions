@@ -6,8 +6,8 @@ code --install-extension ryuta46.multi-command > /dev/null 2>&1
 mkdir -p ryuta46.multi-command
 
 # Paths to the vscode settings and keybindings files
-VSCODE_SETTINGS_FILE="${HOME}/.config/Code/User/settings.json"
-VSCODE_KEYBINDINGS_FILE="${HOME}/.config/Code/User/keybindings.json"
+VSCODE_SETTINGS_FILE="/mnt/c/Users/mason/AppData/Roaming/code/User/settings.json"
+VSCODE_KEYBINDINGS_FILE="/mnt/c/Users/mason/AppData/Roaming/code/User/keybindings.json"
 
 # Temporary files we make to build up the settings and json files
 TEMP_SETTINGS_FILE="temp_settings.txt"
@@ -36,14 +36,12 @@ for directory in $(ls --classify | grep '.*/$' | sed 's/\/$//'); do
 done
 
 # Uninstall any extensions which are not present as a directory
-for vscode_extension in $(comm -13 <(ls --classify | grep '.*/$' | sed 's/\/$//' | sort) <(code --list-extensions | sort)); do 
+for vscode_extension in $(comm -13 <(ls --classify | grep '.*/$' | sed 's/\/$//' | sort) <(code --list-extensions | sort) | tail -n +2); do 
 
     if [[ "${vscode_extension}" == "ms-vscode.powershell" ]]; then
         if ls --classify | grep '.*/$' | sed 's/\/$//' | grep 'ms-vscode.PowerShell' > /dev/null 2>&1; then
             echo "Special case: ms-vscode.PowerShell folder exists so we do not uninstall Powershell extension."
             continue
-        else
-            code --uninstall-extension ${vscode_extension}
         fi
     fi
     
@@ -51,8 +49,6 @@ for vscode_extension in $(comm -13 <(ls --classify | grep '.*/$' | sed 's/\/$//'
         if ls --classify | grep '.*/$' | sed 's/\/$//' | grep 'Llam4u.nerdtree' > /dev/null 2>&1; then
             echo "Special case: Llam4u.nerdtree folder exists so we do not uninstall nerdtree extension."
             continue
-        else
-            code --uninstall-extension ${vscode_extension}
         fi
     fi
 
