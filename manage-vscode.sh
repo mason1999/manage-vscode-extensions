@@ -36,7 +36,7 @@ for directory in $(ls --classify | grep '.*/$' | sed 's/\/$//'); do
 done
 
 # Uninstall any extensions which are not present as a directory
-for vscode_extension in $(comm -13 <(ls --classify | grep '.*/$' | sed 's/\/$//' | sort) <(code --list-extensions | sort) | tail -n +2); do 
+for vscode_extension in $(comm -13 <(ls --classify | grep '.*/$' | sed 's/\/$//' | sort) <(code --list-extensions | tail -n +2 | sort)); do 
 
     if [[ "${vscode_extension}" == "ms-vscode.powershell" ]]; then
         if ls --classify | grep '.*/$' | sed 's/\/$//' | grep 'ms-vscode.PowerShell' > /dev/null 2>&1; then
