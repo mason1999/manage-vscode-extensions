@@ -36,22 +36,7 @@ for directory in $(ls --classify | grep '.*/$' | sed 's/\/$//'); do
 done
 
 # Uninstall any extensions which are not present as a directory
-for vscode_extension in $(comm -13 <(ls --classify | grep '.*/$' | sed 's/\/$//' | sort) <(code --list-extensions | tail -n +2 | sort)); do 
-
-    if [[ "${vscode_extension}" == "ms-vscode.powershell" ]]; then
-        if ls --classify | grep '.*/$' | sed 's/\/$//' | grep 'ms-vscode.PowerShell' > /dev/null 2>&1; then
-            echo "Special case: ms-vscode.PowerShell folder exists so we do not uninstall Powershell extension."
-            continue
-        fi
-    fi
-    
-    if [[ "${vscode_extension}" == "llam4u.nerdtree" ]]; then
-        if ls --classify | grep '.*/$' | sed 's/\/$//' | grep 'Llam4u.nerdtree' > /dev/null 2>&1; then
-            echo "Special case: Llam4u.nerdtree folder exists so we do not uninstall nerdtree extension."
-            continue
-        fi
-    fi
-
+for vscode_extension in $(comm -13 <(ls --classify | grep '.*/$' | sed 's/\/$//' | tr '[:upper:]' '[:lower:]' | sort) <(code --list-extensions | tail -n +2 | sort)); do 
     code --uninstall-extension ${vscode_extension}
 done
 ##############################################################################################
