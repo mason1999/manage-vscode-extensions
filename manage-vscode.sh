@@ -6,8 +6,8 @@ code --install-extension ryuta46.multi-command > /dev/null 2>&1
 mkdir -p ryuta46.multi-command
 
 # Paths to the vscode settings and keybindings files
-VSCODE_SETTINGS_FILE="/mnt/c/Users/mason/AppData/Roaming/code/User/settings.json"
-VSCODE_KEYBINDINGS_FILE="/mnt/c/Users/mason/AppData/Roaming/code/User/keybindings.json"
+VSCODE_SETTINGS_FILE="/mnt/c/Users/mason/AppData/Roaming/Code/User/settings.json"
+VSCODE_KEYBINDINGS_FILE="/mnt/c/Users/mason/AppData/Roaming/Code/User/keybindings.json"
 
 # Temporary files we make to build up the settings and json files
 TEMP_SETTINGS_FILE="temp_settings.txt"
