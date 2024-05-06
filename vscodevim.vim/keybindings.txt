@@ -4,3 +4,13 @@
         "command": "editor.action.clipboardCopyAction",
         "when": "vim.mode == 'Insert'"
     },
+    {
+        "key": "tab",
+        "command": "workbench.action.nextEditorInGroup",
+        "when": "!suggestWidgetMultipleSuggestions && !suggestWidgetVisible && !terminalFocus && vim.mode == 'Normal'"
+    },
+    {
+        "key": "shift+tab",
+        "command": "workbench.action.previousEditorInGroup",
+        "when": "!suggestWidgetMultipleSuggestions && !suggestWidgetVisible && !terminalFocus && vim.mode == 'Normal'"
+    },
